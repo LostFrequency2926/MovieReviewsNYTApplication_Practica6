@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">MovieReviewsNYTApplication</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="content_description">Image</string>
+    <string name="example_tittle_review">Reseña de Ejemplo</string>
+    <string name="reviewer_example">By Daniel Munoz</string>
+    <string name="publication_date_example">Publicado 18-05-2023</string>
+    <string name="title_list">List</string>
+    <string name="title_favorites">Favorites</string>
+    <string name="summary_short_example">..............................................................................................</string>
+    <string name="article_url_example">https://www.google.com/</string>
+    <string name="detail">Detalle Reseña</string>
+</resources>
