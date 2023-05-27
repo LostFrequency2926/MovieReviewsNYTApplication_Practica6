@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.detail.DetailFragment" >
+    android:paddingBottom="56dp"
+    tools:context=".ui.detail.DetailFragment">
 
     <ImageView
         android:id="@+id/picture_image_view"

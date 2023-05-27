@@ -41,9 +41,9 @@ class DetailFragment : Fragment() {
         val displayTitle = review.displayTitle ?: ""
         val reviewer = review.byline ?: ""
         val publicationDate = review.publicationDate ?: ""
-        val imgSource = review.multimedia?.src ?: ""
+        val imgSource = review.multimedia.src ?: ""
         val summaryShort = review.summaryShort ?: ""
-        val articleUrl = review.link?.url ?: ""
+        val articleUrl = review.link.url ?: ""
 
         with(detailBinding){
             displayTitleTextView.text = displayTitle
