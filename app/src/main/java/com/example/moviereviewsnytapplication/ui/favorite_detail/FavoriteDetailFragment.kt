@@ -8,12 +8,8 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.navigation.fragment.navArgs
-import com.example.moviereviewsnytapplication.R
-import com.example.moviereviewsnytapplication.databinding.FragmentDetailBinding
 import com.example.moviereviewsnytapplication.databinding.FragmentFavoriteDetailBinding
-import com.example.moviereviewsnytapplication.ui.detail.DetailFragmentArgs
 import com.example.moviereviewsnytapplication.ui.detail.DetailViewModel
 import com.squareup.picasso.Picasso
 
@@ -44,8 +40,8 @@ class FavoriteDetailFragment : Fragment() {
 
         with(favoriteDetailBinding){
             displayTitleTextView.text = displayTitle
-            publicationDateTextView.text = reviewer
-            reviewerTextView.text = publicationDate
+            publicationDateTextView.text = "by: " + reviewer
+            reviewerTextView.text = "Publicado: " + publicationDate
             summaryShortTextView.text = summaryShort
             urlArticleTextView.text = articleUrl
             Picasso.get().load(imgSource).into(pictureImageView)

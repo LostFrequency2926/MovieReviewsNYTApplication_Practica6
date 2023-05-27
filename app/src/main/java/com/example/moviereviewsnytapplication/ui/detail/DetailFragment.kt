@@ -9,6 +9,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.fragment.navArgs
 import com.example.moviereviewsnytapplication.R
 import com.example.moviereviewsnytapplication.databinding.FragmentDetailBinding
@@ -35,6 +36,9 @@ class DetailFragment : Fragment() {
                 detailBinding.addFavoriteIcon.setImageDrawable(resources.getDrawable(R.drawable.favoritos_icon_1))
             }
         }
+
+        // Habilitar la flecha de retroceso en el fragmento
+        setHasOptionsMenu(true);
 
         val review = args.review
 

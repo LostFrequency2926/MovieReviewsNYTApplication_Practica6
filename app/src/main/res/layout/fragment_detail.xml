@@ -5,18 +5,16 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#3200796B"
-    android:paddingTop="32dp"
     android:paddingBottom="56dp"
     tools:context=".ui.detail.DetailFragment">
 
     <ImageView
         android:id="@+id/picture_image_view"
-        android:layout_width="210dp"
-        android:layout_height="140dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
+        android:layout_width="0dp"
+        android:layout_height="280dp"
         android:contentDescription="@string/content_description"
         android:scaleType="fitXY"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:src="@tools:sample/backgrounds/scenic" />
@@ -25,13 +23,12 @@
         android:id="@+id/display_title_text_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:text="@string/example_tittle_review"
         android:textColor="@color/black"
         android:textSize="20sp"
         android:textStyle="italic"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.08"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/picture_image_view" />
 
@@ -44,8 +41,8 @@
         android:text="@string/publication_date_example"
         android:textColor="@color/black"
         android:textStyle="italic"
-        app:layout_constraintStart_toEndOf="@+id/picture_image_view"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/display_title_text_view" />
 
     <TextView
         android:id="@+id/reviewer_text_view"
@@ -56,21 +53,20 @@
         android:text="@string/reviewer_example"
         android:textColor="@color/black"
         android:textStyle="italic"
-        app:layout_constraintStart_toEndOf="@+id/picture_image_view"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/publication_date_text_view" />
 
     <TextView
         android:id="@+id/summary_short_text_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="24dp"
         android:padding="4dp"
         android:text="@string/summary_short_example"
         android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.08"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/display_title_text_view" />
+        app:layout_constraintTop_toBottomOf="@+id/reviewer_text_view" />
 
     <ImageView
         android:id="@+id/imageView3"
@@ -86,7 +82,7 @@
         android:id="@+id/add_favorite_icon"
         android:layout_width="50dp"
         android:layout_height="50dp"
-        android:layout_marginStart="32dp"
+        android:layout_marginStart="64dp"
         android:layout_marginBottom="32dp"
         android:src="@drawable/favoritos_icon_1"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -97,9 +93,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
-        android:layout_marginBottom="8dp"
         android:text="@string/add_favorite"
         android:textColor="@color/black"
         app:layout_constraintBottom_toTopOf="@+id/add_favorite_icon"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/summary_short_text_view"
+        app:layout_constraintVertical_bias="0.94" />
 </androidx.constraintlayout.widget.ConstraintLayout>

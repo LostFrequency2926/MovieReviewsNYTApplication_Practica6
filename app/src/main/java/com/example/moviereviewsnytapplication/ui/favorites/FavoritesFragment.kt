@@ -30,6 +30,7 @@ class FavoritesFragment : Fragment() {
             onItemClicked = {favoriteReviewsList -> onItemClicked(favoriteReviewsList)},
             onItemLongClicked = {localMovie ->
                 deleteFavoriteReview(localMovie)
+                onResume()
             })
 
         binding.reviewsFavoriteRecyclerView.apply {
