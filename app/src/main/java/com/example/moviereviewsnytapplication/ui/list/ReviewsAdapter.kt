@@ -44,7 +44,7 @@ class ReviewsAdapter (
                 reviewerTextView.text = "by " + review.byline
                 publicationDateTextView.text = "Publicado: " + review.publicationDate
 
-                Picasso.get().load(review.multimedia.src).into(pictureImageView)
+                Picasso.get().load(review.multimedia?.src).into(pictureImageView)
             }
         }
     }

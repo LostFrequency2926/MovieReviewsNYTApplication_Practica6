@@ -1,5 +1,7 @@
 package com.example.moviereviewsnytapplication.ui.detail
 
+import android.content.Intent
+import android.net.Uri
 import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -36,21 +38,20 @@ class DetailFragment : Fragment() {
 
         val review = args.review
 
-        detailViewModel.searchReview(review.displayTitle)
+        detailViewModel.searchReview(review?.displayTitle)
 
-        val displayTitle = review.displayTitle ?: ""
-        val reviewer = review.byline ?: ""
-        val publicationDate = review.publicationDate ?: ""
-        val imgSource = review.multimedia.src ?: ""
-        val summaryShort = review.summaryShort ?: ""
-        val articleUrl = review.link.url ?: ""
+        val displayTitle = review?.displayTitle ?: ""
+        val reviewer = review?.byline ?: ""
+        val publicationDate = review?.publicationDate ?: ""
+        val imgSource = review?.multimedia?.src ?: ""
+        val summaryShort = review?.summaryShort ?: ""
+        val articleUrl = review?.link?.url ?: ""
 
         with(detailBinding){
             displayTitleTextView.text = displayTitle
             publicationDateTextView.text = reviewer
             reviewerTextView.text = publicationDate
             summaryShortTextView.text = summaryShort
-            articleUrlTextView.text = articleUrl
             Picasso.get().load(imgSource).into(pictureImageView)
 
             addFavoriteIcon.setOnClickListener{
@@ -66,5 +67,4 @@ class DetailFragment : Fragment() {
 
         return detailBinding.root
     }
-
 }

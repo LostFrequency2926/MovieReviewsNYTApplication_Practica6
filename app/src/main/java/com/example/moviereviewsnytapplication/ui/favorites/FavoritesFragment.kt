@@ -4,10 +4,10 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import androidx.appcompat.app.AlertDialog
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.moviereviewsnytapplication.R
 import com.example.moviereviewsnytapplication.databinding.FragmentFavoritesBinding
@@ -27,7 +27,7 @@ class FavoritesFragment : Fragment() {
         val favoriteReviewsList = ArrayList<LocalReview>()
         val reviewsFavoriteAdapter = ReviewsFavoriteAdapter(
             favoriteReviewsList,
-            onItemClicked = {},
+            onItemClicked = {favoriteReviewsList -> onItemClicked(favoriteReviewsList)},
             onItemLongClicked = {localMovie ->
                 deleteFavoriteReview(localMovie)
             })
@@ -45,6 +45,10 @@ class FavoritesFragment : Fragment() {
         }
 
         return binding.root
+    }
+
+    private fun onItemClicked(favoriteReview: LocalReview) {
+        findNavController().navigate(FavoritesFragmentDirections.actionNavigationFavoritesToFavoriteDetailFragment(favoriteReview = favoriteReview))
     }
 
     private fun deleteFavoriteReview(localReview: LocalReview) {
@@ -68,5 +72,10 @@ class FavoritesFragment : Fragment() {
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
+    }
+
+    override fun onResume() {
+        super.onResume()
+        favoriteViewModel.loadFavoriteMovies()
     }
 }

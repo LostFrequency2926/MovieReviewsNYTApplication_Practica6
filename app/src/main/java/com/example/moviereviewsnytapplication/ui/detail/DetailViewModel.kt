@@ -20,9 +20,9 @@ class DetailViewModel : ViewModel() {
             displayTitle = review.displayTitle,
             reviewer = review.byline,
             publicationDate = review.publicationDate,
-            imgSource = review.multimedia.src,
+            imgSource = review.multimedia?.src,
             summaryShort = review.summaryShort,
-            articleUrl = review.link.url
+            articleUrl = review.link?.url
         )
 
         viewModelScope.launch {
@@ -30,12 +30,12 @@ class DetailViewModel : ViewModel() {
         }
     }
 
-    fun searchReview(display_title: String) {
+    fun searchReview(display_title: String?) {
 
         var reviewFavorite = false
 
         viewModelScope.launch {
-            val localReview = localReviewRepository.searchReview(display_title)
+            val localReview = display_title?.let { localReviewRepository.searchReview(it) }
 
             if(localReview != null)
                 reviewFavorite = true

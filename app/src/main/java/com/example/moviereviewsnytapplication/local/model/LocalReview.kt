@@ -3,6 +3,7 @@ package com.example.moviereviewsnytapplication.local.model
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
+import java.io.Serializable
 
 @Entity(tableName = "table_reviews")
 data class LocalReview (
@@ -13,4 +14,4 @@ data class LocalReview (
     @ColumnInfo(name = "img_source") val imgSource: String?,
     @ColumnInfo(name = "summary_short") val summaryShort: String?,
     @ColumnInfo(name = "article_url") val articleUrl: String?
-)
+): Serializable

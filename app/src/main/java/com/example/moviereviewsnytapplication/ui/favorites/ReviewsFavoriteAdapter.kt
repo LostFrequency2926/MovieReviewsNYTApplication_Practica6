@@ -5,6 +5,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.moviereviewsnytapplication.R
+import com.example.moviereviewsnytapplication.databinding.CardViewFavoriteItemsBinding
 import com.example.moviereviewsnytapplication.databinding.CardViewReviewItemBinding
 import com.example.moviereviewsnytapplication.local.model.LocalReview
 import com.squareup.picasso.Picasso
@@ -17,7 +18,7 @@ class ReviewsFavoriteAdapter (
 ) : RecyclerView.Adapter<ReviewsFavoriteAdapter.ReviewsViewHolder>(){
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ReviewsViewHolder {
-        val itemView = LayoutInflater.from(parent.context).inflate(R.layout.card_view_review_item, parent, false)
+        val itemView = LayoutInflater.from(parent.context).inflate(R.layout.card_view_favorite_items, parent, false)
         return ReviewsViewHolder(itemView)
     }
 
@@ -40,15 +41,13 @@ class ReviewsFavoriteAdapter (
 
     class ReviewsViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
 
-        private val binding = CardViewReviewItemBinding.bind(itemView)
+        private val binding = CardViewFavoriteItemsBinding.bind(itemView)
 
         fun bindMovie(review: LocalReview) {
             with(binding) {
                 displayTitleTextView.text = review.displayTitle
                 reviewerTextView.text = "by " + review.reviewer
                 publicationDateTextView.text = "Publicado: " + review.publicationDate
-
-                Picasso.get().load(review.imgSource).into(pictureImageView)
             }
         }
     }

@@ -5,13 +5,13 @@ import com.google.gson.annotations.SerializedName
 
 data class MoviesReview(
     @SerializedName("copyright")
-    val copyright: String,
+    val copyright: String?,
     @SerializedName("has_more")
-    val hasMore: Boolean,
+    val hasMore: Boolean?,
     @SerializedName("num_results")
-    val numResults: Int,
+    val numResults: Int?,
     @SerializedName("results")
-    val reviews: List<Review>,
+    val reviews: List<Review?>?,
     @SerializedName("status")
-    val status: String
+    val status: String?
 )

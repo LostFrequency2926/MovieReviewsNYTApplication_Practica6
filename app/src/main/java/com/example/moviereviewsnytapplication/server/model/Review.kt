@@ -6,25 +6,25 @@ import java.io.Serializable
 
 data class Review(
     @SerializedName("byline")
-    val byline: String,
+    val byline: String?,
     @SerializedName("critics_pick")
-    val criticsPick: Int,
+    val criticsPick: Int?,
     @SerializedName("date_updated")
-    val dateUpdated: String,
+    val dateUpdated: String?,
     @SerializedName("display_title")
-    val displayTitle: String,
+    val displayTitle: String?,
     @SerializedName("headline")
-    val headline: String,
+    val headline: String?,
     @SerializedName("link")
-    val link: Link,
+    val link: Link?,
     @SerializedName("mpaa_rating")
-    val mpaaRating: String,
+    val mpaaRating: String?,
     @SerializedName("multimedia")
-    val multimedia: Multimedia,
+    val multimedia: Multimedia?,
     @SerializedName("opening_date")
-    val openingDate: String,
+    val openingDate: String?,
     @SerializedName("publication_date")
-    val publicationDate: String,
+    val publicationDate: String?,
     @SerializedName("summary_short")
-    val summaryShort: String
-) : Serializable
+    val summaryShort: String?
+): Serializable

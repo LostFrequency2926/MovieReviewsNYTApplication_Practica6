@@ -19,7 +19,11 @@
         android:id="@+id/navigation_favorites"
         android:name="com.example.moviereviewsnytapplication.ui.favorites.FavoritesFragment"
         android:label="@string/title_dashboard"
-        tools:layout="@layout/fragment_favorites" />
+        tools:layout="@layout/fragment_favorites" >
+        <action
+            android:id="@+id/action_navigation_favorites_to_favoriteDetailFragment"
+            app:destination="@id/favoriteDetailFragment" />
+    </fragment>
     <fragment
         android:id="@+id/navigation_detail"
         android:name="com.example.moviereviewsnytapplication.ui.detail.DetailFragment"
@@ -28,6 +32,15 @@
         <argument
             android:name="review"
             app:argType="com.example.moviereviewsnytapplication.server.model.Review" />
+    </fragment>
+    <fragment
+        android:id="@+id/favoriteDetailFragment"
+        android:name="com.example.moviereviewsnytapplication.ui.favorite_detail.FavoriteDetailFragment"
+        android:label="fragment_favorite_detail"
+        tools:layout="@layout/fragment_favorite_detail" >
+        <argument
+            android:name="favorite_review"
+            app:argType="com.example.moviereviewsnytapplication.local.model.LocalReview" />
     </fragment>
 
 </navigation>
