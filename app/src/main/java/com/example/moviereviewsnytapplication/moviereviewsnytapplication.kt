@@ -4,7 +4,7 @@ import android.app.Application
 import androidx.room.Room
 import com.example.moviereviewsnytapplication.local.ReviewDataBase
 
-class MovieReviewsNytApplication: Application() {
+class MovieReviewsNyt: Application() {
 
     companion object{
         lateinit var database: ReviewDataBase

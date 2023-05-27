@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">MovieReviewsNYTApplication</string>
+    <string name="app_name">MovieReviewsNYT</string>
     <string name="title_home">Lista Reseñas</string>
     <string name="title_dashboard">Mis Reseñas Favoritas</string>
     <string name="content_description">Image</string>
@@ -14,4 +14,5 @@
     <string name="accept">Aceptar</string>
     <string name="cancel">Cancelar</string>
     <string name="read_article">Lee El Articulo Aqui:</string>
+    <string name="add_favorite">Agregar a favoritos</string>
 </resources>
